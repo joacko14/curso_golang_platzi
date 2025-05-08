@@ -29,9 +29,25 @@ func main() {
 	p(a, b, c, d)
 
 	// Calculo de propiedades geometricas
-	const baseCuadrado = 25
+	// area de un cuadrado, rectangulo, circulo y trapecio
+	const baseCuadrado float64 = 25
 	areaCuadrado := math.Pow(baseCuadrado, 2)
 	p("Area del cuadrado: ", areaCuadrado, " con base: ", baseCuadrado)
+
+	const base int = 15
+	const altura int = 10
+	areaRectangulo := base * altura
+	p("Area del rectangulo: ", areaRectangulo, " con base: ", base, " y altura: ", altura)
+
+	const radio float64 = 5
+	areaCirculo := math.Pi * math.Pow(radio, 2)
+	p("Area del circulo: ", areaCirculo, " con radio: ", radio)
+
+	const baseMayor int = 20
+	const baseMenor int = 10
+	const alturaTrapecio int = 5
+	areaTrapecio := ((baseMayor + baseMenor) * alturaTrapecio) / 2
+	p("Area del trapecio: ", areaTrapecio, " con base mayor: ", baseMayor, " base menor: ", baseMenor, " y altura: ", alturaTrapecio)
 
 	// Operaciones aritmeticas
 
@@ -66,4 +82,5 @@ func main() {
 	// Decremento
 	x--
 	p("Resultado del decremento: ", x)
+
 }
