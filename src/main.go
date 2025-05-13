@@ -5,6 +5,22 @@ import (
 	"math"
 )
 
+func printMessage(message string) {
+	fmt.Println(message)
+}
+
+func greeting(name string, today string) (greeting string) {
+	// Esta es una funcion que recibe un nombre y devuelve un saludo
+	// y la fecha de hoy
+	return fmt.Sprintf("Hola %s, hoy es %s", name, today)
+}
+
+func interpreter(args []string) (message string, count int) {
+	// Esta es una funcion que recibe un slice de strings
+	// y devuelve un string y la cantidad de elementos en el slice
+	return fmt.Sprintf("%s %s %s", args[0], args[1], args[2]), len(args)
+}
+
 func main() {
 
 	p := fmt.Println
@@ -93,4 +109,13 @@ func main() {
 	fmt.Printf("bytes is type %T\n", bytes)
 	fmt.Printf("err is type %T\n", err)
 	fmt.Printf("Pi is %f\n", pi)
+
+	// Pruebas de funciones
+	printMessage("Hola mundo")
+	p(greeting("Gopher", "hoy es lunes"))
+	message, count := interpreter([]string{"Hola", "mundo", "Gopher"})
+	p(message, count)
+	// Si necesito ignorar uno de los valores devueltos
+	_, count = interpreter([]string{"Hello", "world", "Gopher"})
+	p("Cantidad de elementos: ", count)
 }
