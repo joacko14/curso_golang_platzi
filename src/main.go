@@ -83,4 +83,14 @@ func main() {
 	x--
 	p("Resultado del decremento: ", x)
 
+	// Pruebas del paquete fmt
+
+	bytes, err := fmt.Print("Hola mundo\n")
+
+	fmt.Println("Bytes: ", bytes, " Error: ", err)
+
+	fmt.Printf("Hola mundo %s\n", "Gopher")
+	fmt.Printf("bytes is type %T\n", bytes)
+	fmt.Printf("err is type %T\n", err)
+	fmt.Printf("Pi is %f\n", pi)
 }
