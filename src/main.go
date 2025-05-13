@@ -21,6 +21,32 @@ func interpreter(args []string) (message string, count int) {
 	return fmt.Sprintf("%s %s %s", args[0], args[1], args[2]), len(args)
 }
 
+func calculadora(a, b int, operacion string) (resultado int) {
+	switch operacion {
+	case "suma":
+		resultado = a + b
+		break
+	case "resta":
+		resultado = a - b
+		break
+	case "multiplicacion":
+		resultado = a * b
+		break
+	case "division":
+		if b != 0 {
+			resultado = a / b
+			break
+		} else {
+			fmt.Println("Error: Division por cero")
+			break
+		}
+	default:
+		fmt.Println("Error: Operacion no valida")
+		break
+	}
+	return
+}
+
 func main() {
 
 	p := fmt.Println
@@ -65,39 +91,13 @@ func main() {
 	areaTrapecio := ((baseMayor + baseMenor) * alturaTrapecio) / 2
 	p("Area del trapecio: ", areaTrapecio, " con base mayor: ", baseMayor, " base menor: ", baseMenor, " y altura: ", alturaTrapecio)
 
-	// Operaciones aritmeticas
-
-	// Suma
-	x := 10
-	y := 50
-	resultado := x + y
-	p("Dados dos numeros x", x, " y ", y)
-
-	p("Resultado de la suma: ", resultado)
-
-	// Resta
-	result := x - y
-	p("Resultado de la resta: ", result)
-
-	// Multiplicacion
-	resultado = x * y
-	p("Resultado de la multiplicacion: ", resultado)
-
-	// Division
-	resultado = y / x
-	p("Resultado de la division: ", resultado)
-
-	// Modulo
-	resultado = y % x
-	p("Resultado del modulo: ", resultado)
-
-	// Incrmento
-	x++
-	p("Resultado del incremento: ", x)
-
-	// Decremento
-	x--
-	p("Resultado del decremento: ", x)
+	// Uso de la calculadora
+	p("Suma: ", calculadora(10, 5, "suma"))
+	p("Resta: ", calculadora(10, 5, "resta"))
+	p("Multiplicacion: ", calculadora(10, 5, "multiplicacion"))
+	p("Division: ", calculadora(10, 5, "division"))
+	p("Division: ", calculadora(10, 0, "division")) // Division por cero
+	p("Potencia: ", calculadora(10, 5, "potencia")) // Operacion no valida
 
 	// Pruebas del paquete fmt
 
